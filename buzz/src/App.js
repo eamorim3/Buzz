@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Display_info from "./Display_info";
+import AddFormsButton from "./AddFormsButton";
 
 function App() {
   const [publicInfo, setPublicInfo] = useState([
@@ -22,6 +23,10 @@ function App() {
       type: 'Password'
     }
   ])
+
+  const [showAddPrivateInfo, setShowAddPrivateInfo] = useState(false);
+  const [showAddPublicInfo, setShowAddPublicInfo] = useState(false)
+
   const deletePublicInfo = (type) => {
     setPublicInfo(publicInfo.filter((pInfo) => pInfo.type !== type))
   }
@@ -42,10 +47,16 @@ function App() {
         
         <h2>Your public information</h2>
         <Display_info info={publicInfo} onDelete={deletePublicInfo}/>
-        
+        <AddFormsButton
+          onAdd={() => setShowAddPublicInfo(!showAddPublicInfo)}
+          showAdd={showAddPublicInfo}
+        />
         <h2>Your private information</h2>
         <Display_info info={privateInfo} onDelete={deletePrivateInfo}/>
-      
+        <AddFormsButton
+          onAdd={() => setShowAddPrivateInfo(!showAddPrivateInfo)}
+          showAdd={showAddPrivateInfo}
+        />
       </div>  
     </div> 
   );
