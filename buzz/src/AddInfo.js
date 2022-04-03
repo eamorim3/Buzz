@@ -1,6 +1,7 @@
 import { type } from '@testing-library/user-event/dist/type'
 import React from 'react'
 import { useState } from 'react'
+import { VscChromeClose } from 'react-icons/vsc'
 
 export default function AddInfo({onClick}) {
     const [text, setText] = useState('')
@@ -17,24 +18,22 @@ export default function AddInfo({onClick}) {
         <div className='form-div'>
         <form className='add-form' onSubmit={onSubmit}>
             <div className='add-data-form'>
-                <label>Data type (e.g. name, password)</label>
                 <input
                 type='text'
-                placeholder='Add data type'
+                placeholder='Field Name'
                 value={type}
                 onChange={(e) => setType(e.target.value)}
                 />
             </div>
             <div className='add-data-form'>
-                <label>Data</label>
                 <input
                 type='text'
-                placeholder='Add data'
+                placeholder='Field Value'
                 value={text}
                 onChange={(e) => setText(e.target.value)}
                 />
             </div>
-            <input type='submit' value='Save data' className='submit-add-data' />
+        <input type='submit' className='form-submit-button'/>
         </form>
         </div>
     )

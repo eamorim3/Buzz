@@ -4,10 +4,12 @@ import Button from './Button';
 export default function AddFormsButton({ onAdd, showAdd }) {
   
     return (
-          <Button
-            color={showAdd ? 'red' : 'green'}
+        <div className='button-right-container'>
+          <Button className='form-button'
+            color={showAdd ? 'red' : '#129439'}
             text={showAdd ? 'Cancel' : 'Add'}
             onClick={onAdd}
           />
+        </div>
     )
   }

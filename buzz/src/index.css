@@ -13,19 +13,32 @@ code {
 }
 
 .line {
-  display: flex;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }
 
 .spacer {
   flex: 1
 }
 
+.button-right-container {
+  text-align: right;
+}
 .information {
   background: #dddee2f8;
-  margin: 5px;
-  padding: 3px 20px;
+  display: flex;
+  flex-direction: column;
+  margin: 4px;
+  padding: 5px  14px;
   cursor: default;
   border-radius: 5px;
+  height: 6vh;
+  justify-content: center;
+  box-shadow: 1px 1px 3px black;
+}
+.information a {
+  color: black;
 }
 .addButton{
   color: aqua;
@@ -38,4 +51,108 @@ code {
   border: 1px solid steelblue;
   padding: 30px;
   border-radius: 5px;
+  box-shadow: 1px 1px 10px 1px black;
 }
+
+.wrapper
+{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.add-form{
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.disappear {
+  background: none;
+  padding: 0px;
+  border: none;
+}
+.button {
+  display: inline-flex;
+  height: 25px;
+  width: 70px;
+  box-shadow: 0px 0px 2px 1px black;
+  border: 0.5px solid black;
+  border-radius: 4px;
+  margin: 20px 20px 20px 20px;
+  color: #fff;
+  text-decoration: none;
+  font-size: .8em;
+  letter-spacing: 1.5px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+#button-3 {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#button-3 a {
+  position: relative;
+  transition: all .45s ease-Out;
+}
+
+#circle {
+  width: 0%;
+  height: 0%;
+  opacity: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  background: #f7fffb;
+  position: absolute;
+  transition: all .5s ease-Out;
+  top: 20px;
+  left: 70px;
+}
+
+#button-3:hover #circle {
+  width: 200%;
+  height: 500%;
+  opacity: 1;
+  top: -70px;
+  left: -70px;
+}
+
+#button-3:hover a {
+  color: #2D3142;
+}
+
+.form-submit-button {
+  background: #24a3d9;
+  color: #fff;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  box-shadow: 2px 2px 2px rgb(163, 150, 150);
+  text-shadow: none;
+  box-shadow: 0px 0px 1px 1px rgb(60, 105, 172);
+  border: 0.2px solid black;
+  }
+  .form-submit-button:hover {
+  background: #5ca6e2;
+  color: #fff;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  box-shadow: 5px 5px 5px #eee;
+  text-shadow: none;
+  }
+  input[type=text] {
+    border-radius: 3px;
+    border: 1px solid rgb(33, 148, 220);
+    background-color: #f8f8f8;
+  }
+  
+

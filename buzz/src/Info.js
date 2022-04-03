@@ -7,16 +7,15 @@ export default function Info({info, onDelete}) {
     return (
     <div className='information'>
         <div className='line'>
-            <h3>{info.type}</h3>
+            <b>{info.type}</b>
             <div className='spacer'></div>
-            <h3>
+            <b>
                 <VscChromeClose style={{color:'red', cursor:'pointer'}}
                     onClick={() => onDelete(info.type)}
                 />
-            </h3>
+            </b>
         </div>
-
-        <p>{info.text}</p>   
+        <a>{info.text}</a>   
     </div>
   )
 
