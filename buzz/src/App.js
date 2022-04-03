@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Display_info from "./Display_info";
 import AddFormsButton from "./AddFormsButton";
+import AddInfo from "./AddInfo";
 
 function App() {
   const [publicInfo, setPublicInfo] = useState([
@@ -33,17 +34,19 @@ function App() {
   const deletePrivateInfo = (type) => {
     setPrivateInfo(privateInfo.filter((pInfo) => pInfo.type !== type))
   }
-  const addPrivateInfo = (type, text) => {
-    setPrivateInfo(privateInfo.push({text: type, type:text}))
+  const addPrivateInfo = (newData) => {
+    setPrivateInfo([...privateInfo, newData])
+    setShowAddPrivateInfo(!showAddPrivateInfo)
   }
-  const addPublicInfo = (type, text) => {
-    setPublicInfo(publicInfo.push({text: type, type:text}))
+  const addPublicInfo = (newData) => {
+    setPublicInfo([...publicInfo, newData])
+    setShowAddPublicInfo(!showAddPublicInfo)
   }
   
   return (
     <div className='container'>
       
-      <div className='publicInformation'>
+      <div className='AllInformation'>
         
         <h2>Your public information</h2>
         <Display_info info={publicInfo} onDelete={deletePublicInfo}/>
@@ -51,12 +54,18 @@ function App() {
           onAdd={() => setShowAddPublicInfo(!showAddPublicInfo)}
           showAdd={showAddPublicInfo}
         />
+        
+       {showAddPublicInfo && <AddInfo onClick={addPublicInfo} />}
+
         <h2>Your private information</h2>
         <Display_info info={privateInfo} onDelete={deletePrivateInfo}/>
         <AddFormsButton
           onAdd={() => setShowAddPrivateInfo(!showAddPrivateInfo)}
           showAdd={showAddPrivateInfo}
         />
+        
+        {showAddPrivateInfo && <AddInfo onClick={addPrivateInfo} />}
+
       </div>  
     </div> 
   );
