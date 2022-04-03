@@ -13,6 +13,7 @@ export default function Info({info, onDelete}) {
                 <VscChromeClose style={{color:'red', cursor:'pointer'}}
                     onClick={() => onDelete(info.type)}
                 />
+                
             </b>
         </div>
         <a>{info.text}</a>   

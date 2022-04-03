@@ -131,6 +131,10 @@ a {
   color: #2D3142;
 }
 
+.chip-info-header {
+  display: flex;
+}
+
 .form-submit-button {
   background: #24a3d9;
   color: #fff;

@@ -1,20 +1,79 @@
 import React from 'react'
 import { useState } from 'react'
 import ChipInfo from './ChipInfo'
+import Chip from "./Chip"
+import DisplayChips from './DisplayChips'
 
 export default function Dashboard() {
     const [info, setInfo] = useState([
         {
-            text: '07614638',
-            type: 'Bank Account'
+            company: 'Facebook',
+            data: [
+                {
+                    text: 'danielemail@gmail.com',
+                    type: 'email'
+                },
+                {
+                    text: '56789',
+                    type: 'Bank'
+                }
+            ]
         },
         {
-            text: 'aspla#-7^',
-            type: 'Password'
+            company: 'Facebook',
+            data: [
+                {
+                    text: 'danielemail@gmail.com',
+                    type: 'email'
+                },
+                {
+                    text: '56789',
+                    type: 'Bank'
+                }
+            ]
+        },
+        {
+            company: 'Facebook',
+            data: [
+                {
+                    text: 'danielemail@gmail.com',
+                    type: 'email'
+                },
+                {
+                    text: '56789',
+                    type: 'Bank'
+                }
+            ]
+        },{
+            company: 'Facebook',
+            data: [
+                {
+                    text: 'danielemail@gmail.com',
+                    type: 'email'
+                },
+                {
+                    text: '56789',
+                    type: 'Bank'
+                }
+            ]
+        },
+        {
+            company: 'Facebook',
+            data: [
+                {
+                    text: 'danielemail@gmail.com',
+                    type: 'email'
+                },
+                {
+                    text: '56789',
+                    type: 'Bank'
+                }
+            ]
         }
-    ])
     
-    const [openDashboard, setOpenDashboard] = useState(false);
+    ])
+
+    const [openDashboard, setOpenDashboard] = useState(true);
     
     const closeDashboard = () => {
         setOpenDashboard(!openDashboard)
@@ -25,10 +84,6 @@ export default function Dashboard() {
     }
     
     return (
-            <>
-                <ChipInfo info={info} onDelete={deleteInfo} onClose={closeDashboard}/>
-                <ChipInfo info={info} onDelete={deleteInfo} onClose={closeDashboard}/>
-                <ChipInfo info={info} onDelete={deleteInfo} onClose={closeDashboard}/>
-            </>
+        <DisplayChips info={info}/>    
     );
 }
